@@ -40,6 +40,6 @@ Please summarise the following diff file: \n\n${diff}.
 ])
 const textResponse =  response.response.text();
 
-console.log(textResponse);
+// console.log(textResponse);
 return textResponse;
 }

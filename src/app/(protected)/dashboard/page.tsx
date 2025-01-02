@@ -45,10 +45,6 @@ const Dashboard =  () => {
 
 				</div>
 			</div>
-
-			{
-				project?.id
-			}
 			<div className="h-4">
 				<div className="grid grid-cols-1 gap-4 sm:grid-cols-5">
 					Ask Question
@@ -57,10 +53,9 @@ const Dashboard =  () => {
 				</div>
 			</div>
 
-			<div className="mt8"></div>
-			<div>
-				<CommitLog/>
-			</div>
+			<div className="mt-8"></div>
+							<CommitLog/>
+			
 		</div>
 	)
 }

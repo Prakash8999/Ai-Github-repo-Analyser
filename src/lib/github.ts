@@ -25,17 +25,22 @@ export const getCommitHashes = async (githubUrl: string): Promise<Response[]> =>
 		owner,
 		repo,
 	})
-	console.log("data ", data)
+	// console.log("data ", data)
 	const sortedCommits = data.sort((a: any, b: any) => new Date(b.commit.author.date).getTime() - new Date(a.commit.author.date).getTime()) as any[]
 	
-	console.log("sortedCommits ", sortedCommits)
+	// console.log("sortedCommits ", sortedCommits.slice(0,3))
+for (const element of sortedCommits.slice(0,3)) {
+	console.log("Commit Details:", element.commit);
+	console.log("Commit:", element);
+
+}
 
 	return sortedCommits.slice(0, 10).map((commit: any) => ({
 		
 		commitHash: commit.sha as string,
 		commitMessage: commit.commit?.message ?? "",
 		commitAuthorName: commit.commit?.author?.name ?? "",
-		commitAuthorAvatar: commit.commit?.author?.avatar_url ?? "",
+		commitAuthorAvatar: commit?.author?.avatar_url ?? "",
 		commitDate: commit.commit?.author?.date ?? ""
 
 
